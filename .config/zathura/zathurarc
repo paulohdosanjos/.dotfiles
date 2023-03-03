@@ -1,0 +1,24 @@
+set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 0
+
+#Colors
+set default-bg "#EDDD6E"
+set default-fg "#DDDDDD"
+
+set recolor true
+set recolor-lightcolor "#EDDD6E"
+set recolor-darkcolor "#000000"
+
+set selection-clipboard clipboard
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
+map g goto top

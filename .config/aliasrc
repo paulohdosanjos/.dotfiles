@@ -2,5 +2,6 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias v='nvim'
 alias grep='grep --color=auto'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias gitconfig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lf='lfub'
 

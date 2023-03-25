@@ -4,12 +4,12 @@ set statusbar-v-padding 0
 set page-padding 0
 
 #Colors
-set default-bg "#EDDD6E"
-set default-fg "#DDDDDD"
+#set default-bg "#EDDD6E"
+#set default-fg "#DDDDDD"
 
-set recolor true
-set recolor-lightcolor "#EDDD6E"
-set recolor-darkcolor "#000000"
+#set recolor true
+#set recolor-lightcolor "#EDDD6E"
+#set recolor-darkcolor "#000000"
 
 set selection-clipboard clipboard
 map u scroll half-up

@@ -51,7 +51,6 @@ fi
 nitrogen --restore &
 picom --config ~/.config/picom/picom.conf &
 xrandr -s 1920x1080
-setxkbmap br
 dwmblocks &
 #auto startx
 while :; do

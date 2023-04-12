@@ -1,0 +1,99 @@
+******Setting my arch system*****************
+
+********Base System install********************
+
+loadkeys br-abnt //load keyboard layout
+
+setfont ter-132n //bigger console font
+
+timedatectl set-ntp true //sync system time
+
+//partition the disk: efi + swap + filesystem
+
+//make filesystem for each partition
+
+mkfs.fat -F32 /dev/sda1 //efi partition
+
+mkswap /dev/sda2 //swap
+
+swapon /dev/sda2
+
+//mount sda3 into /mnt
+
+pacstrap -K /mnt base linux linux-firmware //script to install the OS
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
+
+pacman -S vim
+
+ln -sf /usr/share/zoneinfo/Brazil/East /etc/localtime 
+
+hwclock -systohc
+
+//setting the locale
+
+//edit /etc/locale.gen and uncomment pt_BR.UTF-8 UTF_8
+
+locale-gen
+
+//edit the /etc/locale.conf
+LANG=en_US.UTF-8
+
+//set host in /etc/hostname
+
+//edit /etc/hosts and add the following lines
+
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   paulo.localdomain  paulo
+
+passwd  //set root password
+
+//adding user
+
+useradd -m paulo
+
+passwd paulo
+
+usermod -aG wheel,storage,video,audio,optical paulo
+
+pacman -S sudo
+
+EDITOR=vim visudo //edit the sudo file to enable wheel group to use sudo (dont forget to keep the "%")
+
+pacman -S grub 
+
+pacman -S efibootmgr dosfstools os-prober mtools
+
+mkdir /boot/EFI
+
+mount /dev/sda1 /boot/EFI
+
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --rechek
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+pacman -S networkmanager terminus-font
+
+//edit the /etc/vconsole.conf file and add the following line
+FONT=ter-132n
+KEYMAP=/usr/share/kbd/keymaps/i386/br-abnt.amp.gz
+
+systemctl enable NetworkManager
+
+exit
+
+umount -l /mnt
+
+shutdown now
+
+//desatach de iso image
+
+*********************List of useful packages*********************************
+mlocate //for using the locate command(updatedb before calling locate)
+git
+
+
+

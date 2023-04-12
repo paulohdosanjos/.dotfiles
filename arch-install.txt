@@ -1,6 +1,9 @@
+
 ******Setting my arch system*****************
 
 ********Base System install********************
+//if installing on a VM, attach the iso
+https://geo.mirror.pkgbuild.com/iso/2023.04.01/
 
 loadkeys br-abnt //load keyboard layout
 
@@ -8,7 +11,7 @@ setfont ter-132n //bigger console font
 
 timedatectl set-ntp true //sync system time
 
-//partition the disk: efi + swap + filesystem
+fdisk /dev/sda1 //partition the disk: efi + swap + filesystem
 
 //make filesystem for each partition
 
@@ -18,7 +21,9 @@ mkswap /dev/sda2 //swap
 
 swapon /dev/sda2
 
-//mount sda3 into /mnt
+mkfs.ext4 /dev/sda3
+
+mount /dev/sda3 /mnt
 
 pacstrap -K /mnt base linux linux-firmware //script to install the OS
 
@@ -41,13 +46,13 @@ locale-gen
 //edit the /etc/locale.conf
 LANG=en_US.UTF-8
 
-//set host in /etc/hostname
+//set host = hostname in /etc/hostname
 
 //edit /etc/hosts and add the following lines
 
 127.0.0.1   localhost
 ::1         localhost
-127.0.1.1   paulo.localdomain  paulo
+127.0.1.1   hostname.localdomain  hostname
 
 passwd  //set root password
 
@@ -77,11 +82,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 pacman -S networkmanager terminus-font
 
+systemctl enable NetworkManager
+
 //edit the /etc/vconsole.conf file and add the following line
 FONT=ter-132n
-KEYMAP=/usr/share/kbd/keymaps/i386/br-abnt.amp.gz
-
-systemctl enable NetworkManager
+KEYMAP=/usr/share/kbd/keymaps/i386/qwerty/br-abnt.map.gz
 
 exit
 
@@ -89,11 +94,66 @@ umount -l /mnt
 
 shutdown now
 
-//desatach de iso image
+//if installed on a VM, desatach de iso image
 
-*********************List of useful packages*********************************
+*********************List of programs*********************************
 mlocate //for using the locate command(updatedb before calling locate)
 git
+htop
+nvim
+zsh
+zathura
+neofetch
+texlive-full
+
+//installing yay
+
+git clone https://aur.archlinux.org/yay-git.git
+sudo pacman -S base-devel
+cd yay-git
+makepkg -si
+
+********************Installing the graphical enviroment*****************
+
+sudo pacman -S xf86-video-fbdev //video drive if VM
+//check the wiki case installing a physical machines
+
+sudo pacman -S xorg xorg-xinit nitrogen picom firefox
+
+//setting wm and terminal
+mkdir .local
+cd .local
+mkdir bin
+mkdir src
+
+cd .local/src
+git clone https://github.com/paulo13579691/dwm-ph.git
+git clone https://github.com/paulo13579691/dwmblocks-ph.git
+sudo pacman -S kitty
+
+cd dwm-ph
+sudo make install
+cd ..
+
+cd dwmblocks-ph
+sudo make install
+cd 
+
+//setting git enviroment .dotfiles
+
+chsh -s /bin/zsh //changing the default shell
+
+//installing neovim plugin manager
+yay -S vim-plug
+//enter neovim and run :PlugInstall
+
+
+//importing wallpapers
+git clone https://github.com/paulo13579691/wall.git
+//after that, set the wallpaper on nitrogen
+
+
+//sync in firefox account
 
 
 

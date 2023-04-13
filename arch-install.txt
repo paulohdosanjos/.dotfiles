@@ -206,7 +206,7 @@ uninstall windows from the notebook
 install arch full a few times on a VM
 dual boot arch with ubuntu on the notebook
 
+check luke smith script for lf
 learn to apply patches with git and apply switchtotag patch to dwm
-change the colors of the status bar
 configure neovim
 learn and use orgmode

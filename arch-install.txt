@@ -201,6 +201,7 @@ pulseaudio -D //daemonize pulse
 
 
 TO DO LIST 
+instalar sistema atual no notebook
 se cadastrar na rede linux
 uninstall windows from the notebook
 install arch full a few times on a VM

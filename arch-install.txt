@@ -105,6 +105,11 @@ zsh
 zathura
 neofetch
 texlive-full
+xclip //enabling clipboard (to do: check documentation)
+rsync //for cp with --exclude option
+lf //file manager
+ttf-jetbrains-mono //the ttf-jetbrains-mono-nerd seems to not work properly on kitty
+//according to the home page, fonts patched with nerd is a no no
 
 //installing yay
 
@@ -128,8 +133,22 @@ mkdir src
 
 cd .local/src
 git clone https://github.com/paulo13579691/dwm-ph.git
+gitconfig remote set-url origin git@github.com:paulo13579691/dwm-ph.git
+sudo pacman -S ttf-awesome
+
 git clone https://github.com/paulo13579691/dwmblocks-ph.git
-sudo pacman -S kitty
+gitconfig remote set-url origin git@github.com:paulo13579691/dwmblocks.git
+
+//installing kitty
+
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \
+    dest=$HOME/.local/bin \
+    launch=n
+ln -sf ~/.local/bin/kitty.app/bin/kitty ~/.local/bin/kitty.app/bin/kitten ~/.local/bin/
+
+//uninstalling kitty
+rm -rf $HOME/.local/bin/kitty.app
+
 
 cd dwm-ph
 sudo make install
@@ -140,6 +159,26 @@ sudo make install
 cd 
 
 //setting git enviroment .dotfiles
+//setting git
+git config --global user.email "paulo13579691@gmail.com"
+git config --global user.name "Paulo Henrique"
+//setting ssh
+
+sudo pacman -S openssh
+ssh-keygen //generate ssh keys
+//add key.pub to github 
+
+//maganing dotfiles
+Reference: https://github.com/Siiilwyn/my-dotfiles/tree/master/.my-dotfiles
+//Replication
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/paulo13579691/.dotfiles.git tmp
+rsync --recursive --verbose --exclude '.git' tmp/ $HOME/
+rm --recursive tmp
+
+//Configuration
+gitconfig config status.showUntrackedFiles no
+gitconfig remote set-url origin git@github.com:paulo13579691/.dotfiles.git
+
 
 chsh -s /bin/zsh //changing the default shell
 
@@ -156,4 +195,13 @@ git clone https://github.com/paulo13579691/wall.git
 //sync in firefox account
 
 
+TO DO LIST 
+se cadastrar na rede linux
+uninstall windows from the notebook
+install arch full a few times on a VM
+dual boot arch with ubuntu on the notebook
 
+learn to apply patches with git and apply switchtotag patch to dwm
+change the colors of the status bar
+configure neovim
+learn and use orgmode

@@ -108,6 +108,7 @@ texlive-full
 xclip //enabling clipboard (to do: check documentation)
 rsync //for cp with --exclude option
 lf //file manager
+ttf-jetbrains-mono-nerd
 //installing yay
 
 git clone https://aur.archlinux.org/yay-git.git
@@ -136,7 +137,14 @@ sudo pacman -S ttf-awesome
 git clone https://github.com/paulo13579691/dwmblocks-ph.git
 gitconfig remote set-url origin git@github.com:paulo13579691/dwmblocks.git
 
-sudo pacman -S kitty
+//installing kitty
+
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \
+    dest=$HOME/.local/bin \
+    launch=n
+//uninstalling kitty
+rm -rf $HOME/.local/bin/kitty.app
+
 
 cd dwm-ph
 sudo make install

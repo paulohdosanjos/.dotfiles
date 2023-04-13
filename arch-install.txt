@@ -191,6 +191,11 @@ yay -S vim-plug
 git clone https://github.com/paulo13579691/wall.git
 //after that, set the wallpaper on nitrogen
 
+//setting audio
+sudo pacman -S pulseaudio pavucontrol
+pulseaudio --chekc
+pulseaudio -D //daemonize pulse
+//enter pavucontrol and check if audio is ok
 
 //sync in firefox account
 

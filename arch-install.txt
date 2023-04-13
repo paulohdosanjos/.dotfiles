@@ -142,7 +142,7 @@ gitconfig remote set-url origin git@github.com:paulo13579691/dwmblocks.git
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \
     dest=$HOME/.local/bin \
     launch=n
-ln -sf ~/.local/bin/kitty.app/kitty ~/.local/bin/kitty.app/kitten ~/.local/bin/
+ln -sf ~/.local/bin/kitty.app/bin/kitty ~/.local/bin/kitty.app/bin/kitten ~/.local/bin/
 
 //uninstalling kitty
 rm -rf $HOME/.local/bin/kitty.app

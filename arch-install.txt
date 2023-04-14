@@ -102,6 +102,7 @@ htop
 nvim
 zsh
 zathura
+zathura-pdf-poppler
 neofetch
 texlive-full
 xclip //enabling clipboard (to do: check documentation)
@@ -200,7 +201,9 @@ uninstall windows from the notebook
 install arch full a few times on a VM
 dual boot arch with ubuntu on the notebook
 
-learn to apply patches with git and apply switchtotag patch to dwm
-change the colors of the status bar
-configure neovim
+//study to do list
 learn and use orgmode
+read Pro Git book
+learn how to use Telescope and NerdTree
+learn to apply patches with git and apply switchtotag patch to dwm
+configure neovim (add lsp, snippers, preview, etc)

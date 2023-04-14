@@ -3,6 +3,7 @@
 ********Base System install********************
 //if installing on a VM, attach the iso
 https://geo.mirror.pkgbuild.com/iso/2023.04.01/
+//enable EFI
 
 loadkeys br-abnt //load keyboard layout
 

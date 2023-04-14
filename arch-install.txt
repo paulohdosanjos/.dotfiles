@@ -105,19 +105,21 @@ zsh
 zathura
 zathura-pdf-poppler
 neofetch
-texlive-full
 xclip //enabling clipboard (to do: check documentation)
 rsync //for cp with --exclude option
 lf //file manager
 ttf-jetbrains-mono //the ttf-jetbrains-mono-nerd seems to not work properly on kitty
 //according to the home page, fonts patched with nerd is a no no
-
+*****************************************************************************
 //installing yay
 
 git clone https://aur.archlinux.org/yay-git.git
 sudo pacman -S base-devel
 cd yay-git
 makepkg -si
+
+//installing neovim plugin manager
+yay -S vim-plug
 
 ********************Installing the graphical enviroment*****************
 
@@ -127,18 +129,19 @@ sudo pacman -S xf86-video-fbdev //video drive if VM
 sudo pacman -S xorg xorg-xinit nitrogen picom firefox
 
 //setting wm and terminal
-mkdir .local
-cd .local
-mkdir bin
-mkdir src
+mkdir -p .local/bin .local/src
 
-cd .local/src
-git clone https://github.com/paulo13579691/dwm-ph.git
-gitconfig remote set-url origin git@github.com:paulo13579691/dwm-ph.git
+cd $HOME/.local/src
+git clone https://github.com/paulohdosanjos/dwm-ph.git
+cd dwm-ph
+sudo make install
+cd ..
 sudo pacman -S ttf-awesome
 
-git clone https://github.com/paulo13579691/dwmblocks-ph.git
-gitconfig remote set-url origin git@github.com:paulo13579691/dwmblocks.git
+git clone https://github.com/paulohdosanjos/dwmblocks-ph.git
+cd dwmblocks-ph
+sudo make install
+cd
 
 //installing kitty
 
@@ -147,53 +150,53 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \
     launch=n
 ln -sf ~/.local/bin/kitty.app/bin/kitty ~/.local/bin/kitty.app/bin/kitten ~/.local/bin/
 
-//uninstalling kitty
+//if want to uninstall kitty, run:
 rm -rf $HOME/.local/bin/kitty.app
-
-
-cd dwm-ph
-sudo make install
-cd ..
-
-cd dwmblocks-ph
-sudo make install
-cd 
 
 //setting git enviroment .dotfiles
 //setting git
 git config --global user.email "paulo13579691@gmail.com"
 git config --global user.name "Paulo Henrique"
-//setting ssh
 
-sudo pacman -S openssh
-ssh-keygen //generate ssh keys
-//add key.pub to github 
 
 //maganing dotfiles
 Reference: https://github.com/Siiilwyn/my-dotfiles/tree/master/.my-dotfiles
 //Replication
-git clone --separate-git-dir=$HOME/.dotfiles https://github.com/paulo13579691/.dotfiles.git tmp
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/paulohdosanjos/.dotfiles.git tmp
 rsync --recursive --verbose --exclude '.git' tmp/ $HOME/
 rm --recursive tmp
 
+
+sudo chsh -s /bin/zsh //changing the default shell
+zsh
+
+
 //Configuration
 gitconfig config status.showUntrackedFiles no
-gitconfig remote set-url origin git@github.com:paulo13579691/.dotfiles.git
+gitconfig remote set-url origin git@github.com:paulohdosanjos/.dotfiles.git
 
-
-chsh -s /bin/zsh //changing the default shell
-
-//installing neovim plugin manager
-yay -S vim-plug
-//enter neovim and run :PlugInstall
+startx
 
 
 //importing wallpapers
-git clone https://github.com/paulo13579691/wall.git
-//after that, set the wallpaper on nitrogen
+git clone https://github.com/paulohdosanjos/wall.git
+
+cd $HOME/.local/src/dwm-ph
+git remote set-url origin git@github.com:paulohdosanjos/dwm-ph.git
+
+cd ../dwmblocks-ph
+git remote set-url origin git@github.com:paulohdosanjos/dwmblocks.git
 
 
 //sync in firefox account
+
+
+//setting ssh
+sudo pacman -S openssh
+ssh-keygen //generate ssh keys
+//add key.pub to github 
+
+//after that, set the wallpaper on nitrogen
 
 
 TO DO LIST 

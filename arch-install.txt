@@ -97,7 +97,7 @@ shutdown now
 //if installed on a VM, desatach de iso image
 
 *********************List of programs*********************************
-mlocate //for using the locate command(updatedb before calling locate)
+mlocate //for using the locate command(sudo updatedb before calling locate)
 git
 htop
 neogit cvim
@@ -134,14 +134,11 @@ mkdir -p .local/bin .local/src
 cd $HOME/.local/src
 git clone https://github.com/paulohdosanjos/dwm-ph.git
 cd dwm-ph
-sudo make install
-cd ..
 sudo pacman -S ttf-font-awesome
+cd
 
 git clone https://github.com/paulohdosanjos/dwmblocks-ph.git
-cd dwmblocks-ph
-sudo make install
-cd
+
 
 //installing kitty
 
@@ -152,6 +149,13 @@ ln -sf ~/.local/bin/kitty.app/bin/kitty ~/.local/bin/kitty.app/bin/kitten ~/.loc
 
 //if want to uninstall kitty, run:
 rm -rf $HOME/.local/bin/kitty.app
+
+cd $HOME/.ocal/src/dwm-ph
+sudo make install
+cd ..
+cd dwmblocks-ph
+sudo make install
+cd
 
 //setting git enviroment .dotfiles
 //setting git
@@ -181,6 +185,9 @@ startx
 //importing wallpapers
 git clone https://github.com/paulohdosanjos/wall.git
 
+//after that, set the wallpaper on nitrogen
+
+
 cd $HOME/.local/src/dwm-ph
 git remote set-url origin git@github.com:paulohdosanjos/dwm-ph.git
 
@@ -192,11 +199,9 @@ git remote set-url origin git@github.com:paulohdosanjos/dwmblocks.git
 
 
 //setting ssh
-sudo pacman -S openssh
 ssh-keygen //generate ssh keys
 //add key.pub to github 
 
-//after that, set the wallpaper on nitrogen
 
 
 TO DO LIST 

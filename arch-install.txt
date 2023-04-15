@@ -11,7 +11,7 @@ setfont ter-132n //bigger console font
 
 timedatectl set-ntp true //sync system time
 
-fdisk /dev/sda1 //partition the disk: efi + swap + filesystem
+fdisk /dev/sda //partition the disk: efi + swap + filesystem
 
 //make filesystem for each partition
 
@@ -35,7 +35,7 @@ pacman -S vim
 
 ln -sf /usr/share/zoneinfo/Brazil/East /etc/localtime 
 
-hwclock -systohc
+hwclock --systohc
 
 //setting the locale
 
@@ -100,7 +100,7 @@ shutdown now
 mlocate //for using the locate command(updatedb before calling locate)
 git
 htop
-nvim
+neogit cvim
 zsh
 zathura
 zathura-pdf-poppler
@@ -136,7 +136,7 @@ git clone https://github.com/paulohdosanjos/dwm-ph.git
 cd dwm-ph
 sudo make install
 cd ..
-sudo pacman -S ttf-awesome
+sudo pacman -S ttf-font-awesome
 
 git clone https://github.com/paulohdosanjos/dwmblocks-ph.git
 cd dwmblocks-ph
@@ -167,7 +167,7 @@ rsync --recursive --verbose --exclude '.git' tmp/ $HOME/
 rm --recursive tmp
 
 
-sudo chsh -s /bin/zsh //changing the default shell
+sudo chsh -s /bin/zsh paulo //changing the default shell
 zsh
 
 

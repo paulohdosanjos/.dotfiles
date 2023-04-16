@@ -1,9 +1,30 @@
 ******Setting my arch system*****************
 
-********Base System install********************
 //if installing on a VM, attach the iso
 https://geo.mirror.pkgbuild.com/iso/2023.04.01/
-//enable EFI
+//enable EFI and boot. Jump to installation section.
+
+//if installing on physical hardware
+
+//create a parition in HDD to install the system
+
+//burn the ISO into a flash drive:
+
+pv arch.iso | dd of=/dev/sdx obs=64K oflag=direct   // the flash drive should NOT be mounted
+
+//then reboot and go to the UEFI settings to change the order of the boot and boot in the flash drive
+
+//install arch in the system (see Installation section)
+
+//change the boot order again to boot on the first system
+
+//install ob-prober to detect the new installed system and config GRUB:
+
+grub-mkconfig -o /boot/grub/grub.cfg   // /dev/sdax should be mounted
+
+//after that you should be able to boot from GRUB.
+
+*******Installing the system***********
 
 loadkeys br-abnt //load keyboard layout
 
@@ -205,6 +226,7 @@ ssh-keygen //generate ssh keys
 
 
 TO DO LIST 
+transformar arch-install em markdown. Fazer READ.me
 se cadastrar na rede linux
 dual boot arch with ubuntu on the notebook
 

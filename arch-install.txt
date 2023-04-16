@@ -10,7 +10,7 @@ https://geo.mirror.pkgbuild.com/iso/2023.04.01/
 
 //burn the ISO into a flash drive:
 
-pv arch.iso | dd of=/dev/sdx obs=64K oflag=direct   // the flash drive should NOT be mounted
+pv arch.iso | sudo dd of=/dev/sdx obs=64K oflag=direct   // the flash drive should NOT be mounted
 
 //then reboot and go to the UEFI settings to change the order of the boot and boot in the flash drive
 

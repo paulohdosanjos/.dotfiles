@@ -105,7 +105,7 @@ mkdir /boot/EFI
 
 mount /dev/sda1 /boot/EFI
 
-grub-install --target=x86_64-efi --bootloader-id=grub_uefi --rechek
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --rechek --removable
 
 grub-mkconfig -o /boot/grub/grub.cfg
 

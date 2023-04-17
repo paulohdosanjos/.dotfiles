@@ -140,7 +140,7 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - lf //file manager
 - ttf-jetbrains-mono //the ttf-jetbrains-mono-nerd seems to not work properly on kitty
 //according to the home page, fonts patched with nerd is a no no
-- ls
+- openssh
 - pv
 
 # Installing yay (AUR Helper)
@@ -214,6 +214,7 @@ rm --recursive tmp
 
 ## Configuration
 
+zsh
 ```bash
 gitconfig config status.showUntrackedFiles no
 gitconfig remote set-url origin git@github.com:paulohdosanjos/.dotfiles.git

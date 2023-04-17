@@ -157,7 +157,7 @@ yay -S vim-plug
 
 sudo pacman -S xf86-video-fbdev //video drive if VM
 //check the wiki case installing a physical machines
-
+sudo pacman -S xf86-video-intel //case intel
 sudo pacman -S xorg xorg-xinit nitrogen picom firefox
 
 //setting wm and terminal

@@ -49,6 +49,11 @@ mkfs.ext4 /dev/sda3
 
 mount /dev/sda3 /mnt
 
+# Generating GPG Keys
+
+pacman-key --init
+pacman-key --populate
+
 pacstrap -K /mnt base linux linux-firmware //script to install the OS
 
 genfstab -U /mnt >> /mnt/etc/fstab

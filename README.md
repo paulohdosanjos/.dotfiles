@@ -135,7 +135,8 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - lf //file manager
 - ttf-jetbrains-mono //the ttf-jetbrains-mono-nerd seems to not work properly on kitty
 //according to the home page, fonts patched with nerd is a no no
-- 
+- ls
+- pv
 
 # Installing yay (AUR Helper)
 
@@ -232,6 +233,11 @@ git remote set-url origin git@github.com:paulohdosanjos/dwmblocks.git
 //setting ssh
 ssh-keygen //generate ssh keys
 //add key.pub to github 
+
+# Useful pages
+https://datatracker.ietf.org/doc/html/rfc1178
+https://wiki.archlinux.org/title/System_time#Time_zone
+https://wiki.archlinux.org/title/Pacman/Package_signing#Resetting_all_the_keys
 
 
 

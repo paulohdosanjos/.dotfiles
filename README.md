@@ -244,7 +244,7 @@ ssh-keygen //generate ssh keys
 https://datatracker.ietf.org/doc/html/rfc1178
 https://wiki.archlinux.org/title/System_time#Time_zone
 https://wiki.archlinux.org/title/Pacman/Package_signing#Resetting_all_the_keys
-
+https://wiki.archlinux.org/title/Touchpad_Synaptics
 
 
 # TO DO LIST 

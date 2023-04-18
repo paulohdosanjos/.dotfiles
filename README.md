@@ -240,6 +240,34 @@ git remote set-url origin git@github.com:paulohdosanjos/dwmblocks.git
 ssh-keygen //generate ssh keys
 //add key.pub to github 
 
+# Configuring TouchPad
+
+sudo pacman -S xf86-input-synaptics
+sudo cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.cond
+//add the following lines
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "3"
+        Option "TapButton3" "2"
+        Option "VertEdgeScroll" "on"
+        Option "VertTwoFingerScroll" "on"
+        Option "HorizEdgeScroll" "on"
+        Option "HorizTwoFingerScroll" "on"
+        Option "CircularScrolling" "on"
+        Option "CircScrollTrigger" "2"
+        Option "EmulateTwoFingerMinZ" "40"
+        Option "EmulateTwoFingerMinW" "8"
+        Option "CoastingSpeed" "0"
+        Option "FingerLow" "30"
+        Option "FingerHigh" "50"
+        Option "MaxTapTime" "125"
+        Option "VertScrollDelta" "-111"
+        Option "HorizScrollDelta" "-111"
+EndSection
+
 # Useful pages
 https://datatracker.ietf.org/doc/html/rfc1178
 https://wiki.archlinux.org/title/System_time#Time_zone

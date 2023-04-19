@@ -278,7 +278,8 @@ https://wiki.archlinux.org/title/Touchpad_Synaptics
 # TO DO LIST 
 transformar arch-install em markdown. Fazer READ.me
 se cadastrar na rede linux
-dual boot arch with ubuntu on the notebook
+dual boot arch with feora
+make edudoam file
 
 ## Study to do list
 study shcheduling MINIX 3 Book

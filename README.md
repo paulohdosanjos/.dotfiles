@@ -279,17 +279,21 @@ Check https://www.reddit.com/r/archlinux/comments/k1dtbo/pulseaudio_shows_dummy_
 if soundcard not dettected
 
 # TO DO LIST 
-transformar arch-install em markdown. Fazer READ.me
 se cadastrar na rede linux
-dual boot arch with feora
-make edudoam file
+dual boot arch with fedora
+make edudoam section
+learn tmux 
+read orgmode guide pdf
+read telescope web page
+use a fuzy finder to navigate from the terminal
+check harpoon plugin for vim
+make a doc about my workflow 
+
 
 ## Study to do list
 study shcheduling MINIX 3 Book
-study tmux and good workflows
 learn and use orgmode
 read Pro Git book
-learn how to use Telescope and NerdTree
 learn to apply patches with git and apply switchtotag patch to dwm
 chekc prints for potencial patches for dwm
 configure neovim (add lsp, snippers, preview, etc)

@@ -141,7 +141,8 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - ttf-jetbrains-mono //the ttf-jetbrains-mono-nerd seems to not work properly on kitty
 //according to the home page, fonts patched with nerd is a no no
 - openssh
-- pv
+- pulseadio
+- pavucontrol
 
 # Installing yay (AUR Helper)
 

@@ -144,6 +144,7 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - pulseadio
 - pavucontrol
 - tree
+- python-pynvim
 
 # Installing yay (AUR Helper)
 

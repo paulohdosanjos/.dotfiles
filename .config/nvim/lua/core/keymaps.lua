@@ -12,6 +12,7 @@ vim.opt.tabstop = 2 --number of spaces for <tab>
 vim.opt.shiftwidth = 2 --number of spaces for (auto)ident
 vim.opt.shiftround = true --(check)
 vim.opt.expandtab = true --expand <tab> to spaces in insert mode
+vim.wo.wrap = true
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>') --clear the search
 vim.keymap.set('i', 'jj', '<Esc>')
@@ -19,3 +20,8 @@ vim.keymap.set('n', '<Space>w', ':w<CR>')
 vim.keymap.set('i', '<Space>w', ':w<CR>')
 vim.keymap.set('n', '<Space>q', ':q<CR>')
 vim.keymap.set('i', '<Space>q', ':q<CR>')
+
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('v', 'j', 'gj')
+vim.keymap.set('v', 'k', 'gk')

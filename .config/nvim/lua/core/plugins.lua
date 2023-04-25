@@ -18,6 +18,10 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+  use 'SirVer/ultisnips'
+  use 'Shougo/deoplete.nvim'
+  --use 'honza/vim-snippets'
+  
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',

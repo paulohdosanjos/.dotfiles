@@ -140,8 +140,10 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - lf //file manager
 - ttf-jetbrains-mono //the ttf-jetbrains-mono-nerd seems to not work properly on kitty
 //according to the home page, fonts patched with nerd is a no no
-- ls
-- pv
+- openssh
+- pulseadio
+- pavucontrol
+- tree
 
 # Installing yay (AUR Helper)
 
@@ -214,6 +216,7 @@ rm --recursive tmp
 
 ## Configuration
 
+zsh
 ```bash
 gitconfig config status.showUntrackedFiles no
 gitconfig remote set-url origin git@github.com:paulohdosanjos/.dotfiles.git
@@ -239,21 +242,61 @@ git remote set-url origin git@github.com:paulohdosanjos/dwmblocks.git
 ssh-keygen //generate ssh keys
 //add key.pub to github 
 
+# Configuring TouchPad
+
+sudo pacman -S xf86-input-synaptics
+sudo cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.cond
+//add the following lines
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "3"
+        Option "TapButton3" "2"
+        Option "VertEdgeScroll" "on"
+        Option "VertTwoFingerScroll" "on"
+        Option "HorizEdgeScroll" "on"
+        Option "HorizTwoFingerScroll" "on"
+        Option "CircularScrolling" "on"
+        Option "CircScrollTrigger" "2"
+        Option "EmulateTwoFingerMinZ" "40"
+        Option "EmulateTwoFingerMinW" "8"
+        Option "CoastingSpeed" "0"
+        Option "FingerLow" "30"
+        Option "FingerHigh" "50"
+        Option "MaxTapTime" "125"
+        Option "VertScrollDelta" "-111"
+        Option "HorizScrollDelta" "-111"
+EndSection
+
 # Useful pages
 https://datatracker.ietf.org/doc/html/rfc1178
 https://wiki.archlinux.org/title/System_time#Time_zone
 https://wiki.archlinux.org/title/Pacman/Package_signing#Resetting_all_the_keys
+https://wiki.archlinux.org/title/Touchpad_Synaptics
 
+Check https://www.reddit.com/r/archlinux/comments/k1dtbo/pulseaudio_shows_dummy_output_only_need_help/
+if soundcard not dettected
 
+https://castel.dev/post/lecture-notes-1/
 
 # TO DO LIST 
-transformar arch-install em markdown. Fazer READ.me
 se cadastrar na rede linux
-dual boot arch with ubuntu on the notebook
+dual boot arch with fedora
+make edudoam section
+learn tmux and make a text file resuming and showing the essencials
+read orgmode guide pdf and make a file with the essencials
+read telescope web page and make a file with the essencials
+use a fuzy finder to navigate from the terminal
+check harpoon plugin for vim and make a file with the essencials
+make a doc about my workflow 
+
 
 ## Study to do list
+study shcheduling MINIX 3 Book and make a file with the essencials
 learn and use orgmode
-read Pro Git book
-learn how to use Telescope and NerdTree
-learn to apply patches with git and apply switchtotag patch to dwm
+read Pro Git book and make a file with the essencials
+learn to apply patches with git and apply switchtotag patch to dwm and make a file with the essencials
+chekc prints for potencial patches for dwm
 configure neovim (add lsp, snippers, preview, etc)

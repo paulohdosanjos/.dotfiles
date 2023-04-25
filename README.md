@@ -278,6 +278,8 @@ https://wiki.archlinux.org/title/Touchpad_Synaptics
 Check https://www.reddit.com/r/archlinux/comments/k1dtbo/pulseaudio_shows_dummy_output_only_need_help/
 if soundcard not dettected
 
+https://castel.dev/post/lecture-notes-1/
+
 # TO DO LIST 
 se cadastrar na rede linux
 dual boot arch with fedora

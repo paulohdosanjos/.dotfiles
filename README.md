@@ -143,6 +143,7 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - openssh
 - pulseadio
 - pavucontrol
+- tree
 
 # Installing yay (AUR Helper)
 

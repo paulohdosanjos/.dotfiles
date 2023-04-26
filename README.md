@@ -147,6 +147,8 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - python-pynvim
 - flameshot
 - sxiv
+- bluez
+- bluez-utils
 
 # Installing yay (AUR Helper)
 

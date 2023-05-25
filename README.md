@@ -150,6 +150,7 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - bluez
 - bluez-utils
 - unzip
+- arandr
 
 # Installing yay (AUR Helper)
 

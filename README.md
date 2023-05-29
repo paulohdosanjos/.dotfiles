@@ -152,6 +152,12 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - unzip
 - arandr
 
+# Python modules
+- https://github.com/jktr/matplotlib-backend-kitty (for plotting in kitty using matplotlib)
+- numpy
+- scipy
+- matplotlib
+
 # Installing yay (AUR Helper)
 
 git clone https://aur.archlinux.org/yay-git.git

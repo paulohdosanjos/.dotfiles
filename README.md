@@ -151,6 +151,7 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - bluez-utils
 - unzip
 - arandr
+- ripgrep
 
 # Python modules
 - https://github.com/jktr/matplotlib-backend-kitty (for plotting in kitty using matplotlib)

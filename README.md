@@ -145,6 +145,21 @@ mlocate //for using the locate command(sudo updatedb before calling locate)
 - pavucontrol
 - tree
 - python-pynvim
+- flameshot
+- sxiv
+- bluez
+- bluez-utils
+- unzip
+- arandr
+- ripgrep
+- bat
+- ueberzug
+
+# Python modules
+- https://github.com/jktr/matplotlib-backend-kitty (for plotting in kitty using matplotlib)
+- numpy
+- scipy
+- matplotlib
 
 # Installing yay (AUR Helper)
 
@@ -281,23 +296,3 @@ Check https://www.reddit.com/r/archlinux/comments/k1dtbo/pulseaudio_shows_dummy_
 if soundcard not dettected
 
 https://castel.dev/post/lecture-notes-1/
-
-# TO DO LIST 
-se cadastrar na rede linux
-dual boot arch with fedora
-make edudoam section
-learn tmux and make a text file resuming and showing the essencials
-read orgmode guide pdf and make a file with the essencials
-read telescope web page and make a file with the essencials
-use a fuzy finder to navigate from the terminal
-check harpoon plugin for vim and make a file with the essencials
-make a doc about my workflow 
-
-
-## Study to do list
-study shcheduling MINIX 3 Book and make a file with the essencials
-learn and use orgmode
-read Pro Git book and make a file with the essencials
-learn to apply patches with git and apply switchtotag patch to dwm and make a file with the essencials
-chekc prints for potencial patches for dwm
-configure neovim (add lsp, snippers, preview, etc)

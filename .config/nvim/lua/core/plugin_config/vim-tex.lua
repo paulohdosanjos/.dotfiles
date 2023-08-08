@@ -1,7 +1,7 @@
 vim.g.tex_flavor = 'latex' -- Define o sabor padrão para LaTeX
 
-vim.api.nvim_set_keymap('n', '<leader>ll', ':VimtexCompile<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>lv', ':VimtexView<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>c', ':VimtexCompile<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>v', ':VimtexView<CR>', { noremap = true, silent = true })
 
 vim.g.vimtex_view_method = 'zathura' 
 

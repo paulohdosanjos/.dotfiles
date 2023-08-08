@@ -18,18 +18,44 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'SirVer/ultisnips'
-  use 'Shougo/deoplete.nvim'
-  --use 'honza/vim-snippets'
+  use 'windwp/nvim-autopairs'
+  use "lukas-reineke/indent-blankline.nvim" 
+  use 'lervag/vimtex'
+  use 'famiu/bufdelete.nvim' 
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+
+  use "christoomey/vim-tmux-navigator"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+
+  use { -- simple to use language server installer
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+  }
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
+  use "nvim-lua/plenary.nvim"
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use 'lervag/vimtex'
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  use "ThePrimeagen/harpoon"
+
+  use "dasupradyumna/midnight.nvim"
+
   if packer_bootstrap then
     require('packer').sync()
   end

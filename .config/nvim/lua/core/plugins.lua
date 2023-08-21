@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
   use "ThePrimeagen/harpoon"
 
   use "dasupradyumna/midnight.nvim"
-
+  use "rebelot/kanagawa.nvim"
   if packer_bootstrap then
     require('packer').sync()
   end

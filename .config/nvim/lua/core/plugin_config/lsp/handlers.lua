@@ -28,7 +28,7 @@ M.setup = function()
 			active = signs, -- show signs
 		},
 		update_in_insert = true,
-		underline = true,
+		underline = false,
 		severity_sort = true,
 		float = {
 			focusable = true,
@@ -50,6 +50,18 @@ M.setup = function()
 		border = "rounded",
 	})
 end
+
+
+-- Toggle diagnósticos do LSP
+local diagnostics_active = true
+vim.keymap.set('n', '<leader>ld', function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.show()
+  else
+    vim.diagnostic.hide()
+  end
+end)
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }

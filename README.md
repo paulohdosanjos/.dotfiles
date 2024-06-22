@@ -287,6 +287,7 @@ Section "InputClass"
 EndSection
 
 # Useful pages
+https://askubuntu.com/questions/172972/configure-mouse-speed-not-pointer-acceleration
 https://datatracker.ietf.org/doc/html/rfc1178
 https://wiki.archlinux.org/title/System_time#Time_zone
 https://wiki.archlinux.org/title/Pacman/Package_signing#Resetting_all_the_keys
